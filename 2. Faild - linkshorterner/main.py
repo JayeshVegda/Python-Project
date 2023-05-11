@@ -23,22 +23,39 @@ class Link_shortener:
         os.system("cls")
         self.logo()
         print("\n1. Enter the URL to shorten the below !")
-        long_url = input("Enter the URL: ")
+        long_url = input("1. Enter the URL: ")
+        custom = input("2. Enter Custom id (Optional): ")
         input("Press Enter to Grenate a short Link")
-        print(self.url)
-        data = {
-        "long_url": long_url
-        }
+        
+        if custom == "":
+            data = {
+                 "long_url": long_url
+            }
+        elif custom != "":
+            data = {
+                 "long_url": long_url,
+                 "custom_id": custom,
+            }
 
         head = {
         "Content-Type": "application/json"
         }
 
-        
-        req = requests.post(self.url, data=data, headers=head)
-        dump = req.json()
-        result = dump["short_url"]
-        print(f"Your Short Link is: {result}")
+        jsondata = json.dumps(data)
+        print(jsondata)
+        req = requests.post(self.url, data=jsondata, headers=head)
+        rj = req.json()
+        print(rj)
+        dump = req.text
+        print(dump)
+       
+        if "https" in dump:
+            print(f"Your Short Link is: {result}")
+        elif "URL already in use" in dump:
+            print(f"Short Link already in use: {result}")
+        else:
+            print(f"Something went wrong: {dump}")
+    
                 
         
     
