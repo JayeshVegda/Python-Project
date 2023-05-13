@@ -9,8 +9,6 @@ import pandas as pd
 
 
 class movieanal:
-    
-    
     def __init__(self):
         self.year = 0
         self.name = ""
@@ -47,7 +45,6 @@ class movieanal:
         ██║░╚═╝░██║╚█████╔╝░░╚██╔╝░░██║███████╗  ██████╔╝███████╗██║░░██║██║░░██║╚█████╔╝██║░░██║
         ╚═╝░░░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝
                                         \033[22;34;41m Made By Jayesh Vegda \033[0m                                      """)
-
     def logo(self):
             self.Connection()
             print("""
@@ -58,49 +55,56 @@ class movieanal:
             ██║╚██╔╝██║██║░░██║░╚████╔╝░██║██╔══╝░░  ░╚═══██╗██╔══╝░░██╔══██║██╔══██╗██║░░██╗██╔══██║
             ██║░╚═╝░██║╚█████╔╝░░╚██╔╝░░██║███████╗  ██████╔╝███████╗██║░░██║██║░░██║╚█████╔╝██║░░██║
             ╚═╝░░░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝""")
-
     def start_logo(self):
         os.system("cls")
         self.logo()
-        self.sleep_1
-        
+        self.sleep_1        
     def movie_year_search(self):
-        os.system("cls")
-        self.logo()
-        self.year = input("\nEnter the year of movie you wanna search (1800-2023) : ")
-        print("Searching... \n")
-        time.sleep(2)
-        count = 0
-        while not self.valid_input:
+        while True:
             try:
+                os.system("cls")
+                self.logo()
+                self.year = input("\nEnter the year of movie you wanna search (1800-2023) : ")
+                self.slowType("Searching.........", .03, newLine=False)
+                sys.stdout.flush()
+                time.sleep(1)
+                count = 0
                 if int(self.year) >= 1800 and int(self.year) <= 2023:
-                    self.valid_input = True
+                    print("\r\033[1;31mHere is your result\n\033[1;32m")
                     print(f"Result of Year : {self.year}")
                     movie_count = 0
-                    for x in self.Connection().find({"Year": int(self.year)}):
+                    for i in self.Connection().find({"Year": int(self.year)}):
                         movie_count = movie_count + 1
                         name = i.get("Name", "Not Avalible")
                         year = i.get("Year", "Not Avalible")
                         rate = i.get("Rating", "Not Avalible")
                         # print(f"Name: {name} \nYear: {year} \nRating: {rate} \n")
                         print(f"{name} ({year}) - Rating: {rate}")
-                      
-                    print(f"\nYou Have Watched Total {movie_count} in Year {self.year}")
+                    print(f"\n\033[1;34mYou Have Watched {movie_count} in Year {self.year}")
+                    see = input("\n\033[0mPress Enter to Search or Write 'quit' to return : ")
                     
+                    if see.strip() == "":
+                        pass
+                    elif see == "quit" or see == "exit":
+                        break
+                    else:
+                        print("Error Occure")
+                        time.sleep(2)
+                        break
                 else:
-                    self.valid_input = False
-                    print("Enter Year Between 1800 to 2023 only")
-                    time.sleep(1)
+                    print("\r\033[1;31mEnter Year Between 1800 to 2023 only\033[0m")
+                    time.sleep(2)
                     self.movie_year_search()
                     count += 1
                     if count >= 3:
-                        print("Too many invalid inputs. Exiting.")
+                        print("\r\033[1;31mToo many invalid inputs. Exiting.\033[0m")
                         break
+                    break
             except ValueError:
-                self.valid_input = False
-                print("Invalid Input")
-                time.sleep(1)
+                print("\r\033[1;31mInvalid Input\033[0m")
+                time.sleep(2)
                 self.movie_year_search()
+                break
 
         
         # valid_input = False
@@ -126,54 +130,60 @@ class movieanal:
         #         time.sleep(1)
         #         self.movie_year_search()
     def movie_search_by_name(self):
-        os.system("cls")
-        self.logo()
-        self.sleep_1
-        self.name = input("\nEnter the name of movie : ")
-        self.slowType("Searching.........", .03, newLine=False)
-        sys.stdout.flush()
-        time.sleep(1)
-        print("\rHere is your result\n")
-        pattern = re.compile(f".*{self.name}.*", re.IGNORECASE)
-        results = self.Connection().find({ "Name": pattern })
-        check = list(results)
-        time.sleep(1)
-        count = 0
-        while not self.valid_input_name:
+        while True:
             try:
+                os.system("cls")
+                self.logo()
+                self.sleep_1
+                self.name = input("\nEnter the Name of movie : ")
+                self.slowType("Searching.........", .03, newLine=False)
+                sys.stdout.flush()
+                time.sleep(1)
+                pattern = re.compile(f".*{self.name}.*", re.IGNORECASE)
+                results = self.Connection().find({ "Name": pattern })
+                check = list(results)
+                time.sleep(1)
+                count = 0
+                movie_count = 0
                 if not check :
-                    self.valid_input_name = False
-                    print("Sorry We Cound't Found Your Movie")
-                    print("Please Try Again.....")
+                    print("\r\033[1;31mSorry We Cound't Found Your Movie")
                     time.sleep(2)
-                    self.movie_search_by_name()
             
                 elif check:
-                    self.valid_input_name = True
                     pattern = re.compile(f".*{self.name}.*", re.IGNORECASE)
                     results = self.Connection().find({ "Name": pattern})
-       
+                    print("\r\033[1;31mHere is your result\n\033[1;32m")
+                   
+                    
                     for result in results:
+                        movie_count = movie_count + 1
                         name = result["Name"]
                         year = result.get("Year", "Not Avaliable")
                         rate = result.get("Rating", "Not Avaliable")
-                        
-                        print(f"{name} ({year}) - Rating: {rate}")
+                        print(f"{movie_count}. {name} ({year}) - Rating: {rate}")
                     
-                    i = input("Click Enter")  
+                    see = input("\n\033[0mPress Enter to Search or Write 'quit' to return : ")
+                    sys.stdout.flush()
+                    if see.strip() == "":
+                        pass
+                    elif see == "quit" or see == "exit":
+                        self.slowType("\r\033[1;31mReturning to the main menu....\033[0m", 0.1, newLine=False)
+                        time.sleep(1)
+                        self.main_menu()
+                        break
+                    else:
+                        print("Error Occure")
+                        time.sleep(2)
+                        break
                                     
                 else:
-                    self.valid_input_name = False
-                    print("Sorry We Cousakmskamasknd't Found Your Movie")
-                    print("Please Try Again.....")
+                    print("\r\033[1;31mSorry We Could't Found Your Movie\033[0m")
                     time.sleep(2)
-                    self.movie_search_by_name()
                                 
             except ValueError:
-                self.valid_input_name = False
-                print("Invalid Input")
+                print("\r\033[1;31mInvalid Input\033[0m")
                 time.sleep(1)
-                self.movie_search_by_name()
+                break
 
         
         
@@ -268,7 +278,6 @@ class movieanal:
         else:
             print("Error Occure")
             time.sleep(2)
-
     def imp_data(self):
         self.start_logo()
         print("\nMake Sure that your file name is 'rating.csv' in MovieAnalysis Folder !")
@@ -290,6 +299,33 @@ class movieanal:
                 print(f"- ERROR : {self.db_name} is Unsucessfull !")
         else:
             pass
+    def movie_menu(self):
+        self.start_logo()
+        print("\n\033[22;35mSelect Any One Option from below : \033[0m")
+        print("1. Movie Search by Name")
+        print("2. Movie Search by Year")
+        print("3. Movie Search by Rating")
+        print("4. Return to Main Menu")
+        
+        choise = int(input("Choise Any one : "))
+        
+        while True:
+            if choise == 1:
+                self.movie_search_by_name()
+                break
+            elif choise == 2:
+                self.movie_year_search()
+                break
+            elif choise == 3:
+                self.movie_search_by_rating()
+                break
+            elif choise == 4:
+                self.main_menu()
+                break
+            else:
+                print(Fore.RED + "Please Enter The Valid Input ! " + Fore.RESET)
+                time.sleep(2)
+                self.movie_menu()
         
     def my_setting(self):
         self.start_logo()
@@ -359,5 +395,4 @@ class movieanal:
 if __name__ == "__main__":
     
     obj = movieanal()
-    # obj.movie_year_search()
-    obj.main_menu()
+    obj.movie_menu()
