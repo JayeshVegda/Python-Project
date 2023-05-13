@@ -1,0 +1,15 @@
+# Idea of Future Project
+
+1. Game - Higher and Lower Game (mid)
+2. Yt video Downloader (easy)
+3. Duplicate File/folder finder (mid)
+4. Instagram Media Downloader (easy)
+5. Age Calculator (easy)
+6. Find Movie Details (easy) 
+7. Game - Tic - tac - Toe (mid)
+8. Read News (mid)
+9. Translater (mid)
+10. Browser (Hard)
+11. wifi scraper (mid)
+12. weather and time (mid)
+13. Game - Dice Simulation (mid)
