@@ -1,7 +1,14 @@
-# Python Project
- In this Respo, I will create a lot python project for learning process, 
- 
- 
+<h1 align="center">
+  Python Beginner Project
+</h1>
+
+<p align="center">
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Build With Love"/>
+  <img src="https://forthebadge.com/images/badges/uses-brains.svg" alt="Uses Brains"/>
+  <img src="https://forthebadge.com/images/badges/made-with-python.svg" alt="Uses Brains"/>
+</p>
+
+
 | No | Name | Description | Author |
 | ------ | ------ | ------ | ------ |
 | 01 | [Rock, Paper, Scisoor](https://github.com/JayeshVegda/Python-Project/tree/main/1.%20Rock%2C%20Paper%2C%20Scissor) | Simple Rock, Paper, Scisoor game made with python | [Jayesh Vegda](https://github.com/JayeshVegda)
