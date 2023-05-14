@@ -40,5 +40,5 @@ This password generator was created by [Jayesh Vegda](https://github.com/JayeshV
 ## Contributing
 If you would like to contribute to this project, please open an issue or submit a pull request.
 
-##License
+## License
 This project is licensed under the MIT License.
