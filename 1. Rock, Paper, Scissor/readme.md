@@ -1,33 +1,29 @@
-#Creating A game 
+<h1 align="center">
+    Rock, Paper, Scissor
+</h1>
 
-#login understanding
+This is a simple implementation of the popular game "Rock-Paper-Scissors" in Python. The game is played between two players, and the objective is to select one of three options (rock, paper, or scissors) that will beat the other player's selection based on a set of predefined rules.
 
-''' 
-1 rock kill sessioer
-3 sessior kill paper
-2 paper kill rock
+## Rules of the Game
+- Rock beats scissors
+- Scissors beats paper
+- Paper beats rock
 
-if com take rock1, i will take rock
-    then result will be draw
-if com take rock1, i will take paper2
-    then result will be user will 
-if com take rock, i will take sessior3
-    then result will be com will
-    
+## Screen Shots
+<details>
+<summary>1. Main Menu</summary>
+<img src="https://i.ibb.co/KzBBcWB/image.png">
 
-    
-if com take sessior, i will take rock
-    then i will win
-if com take sessior, i will take paper
-    then i will com win
-if com take sessior, i will take sessior
-    then i will draw
+</details>
 
-if com take paper, i will take rock
-    then i will win
-if com take paper, i will take paper
-    then i will draw
-if com take paper, i will take sessior
-    then  i will lose
-    
-'''
+<details>
+<summary>2. Game Mode</summary>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/zF6HYxb/image.png" alt="image" border="0"></a>
+</details>
+
+<details>
+<summary>3. Credits </summary>
+<a href="https://ibb.co/xSvSnX3"><img src="https://i.ibb.co/bghg4Q7/image.png" alt="image" border="0"></a>
+</details>
+
+## 
