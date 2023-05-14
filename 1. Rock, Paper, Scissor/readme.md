@@ -26,4 +26,12 @@ This is a simple implementation of the popular game "Rock-Paper-Scissors" in Pyt
 <a href="https://ibb.co/xSvSnX3"><img src="https://i.ibb.co/bghg4Q7/image.png" alt="image" border="0"></a>
 </details>
 
-## 
+## Useful Module
+| NO | Name | Use |
+|--- | ---- | -----|
+| 01 | Random | To Pickup Random Choise for Game |
+| 02 | CType | To Write Name in Console Title | 
+
+## Credits 
+
+This game was developed by [Jayesh Vegda](https://github.com/JayeshVegda) using Python. Feel free to use and modify the code for your own projects.
