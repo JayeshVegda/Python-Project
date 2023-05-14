@@ -1,11 +1,19 @@
-import pandas as pd                        
-from pytrends.request import TrendReq
+import pymongo
+import time
+import os
+import re
+import sys
+import colorama
+from colorama import Fore, Back
+import pandas as pd
+import ctypes
 
-pytrend = TrendReq()
-
-pytrend.build_payload(kw_list=['Taylor Swift'])
-# Interest by Region
-df = pytrend.interest_by_region()
-df.head(10)
-print(df)
-print(df.head(10))
+class game_hl:
+    def __init__(self):
+        pass
+    
+    def get_data(self):
+        client = pymongo.MongoClient("mongodb://localhost:27017/")
+        db = client["game"]
+        col = db["hl"]
+        return col.find_one()
