@@ -16,3 +16,5 @@
 | 03 | [Movie Analysis](https://github.com/JayeshVegda/Python-Project/tree/main/3.%20Movie%20Analysis) | Movie Analysis is program that will help you track movie | [Jayesh Vegda](https://github.com/JayeshVegda)|
 | 04 | [Higher & Lower](https://github.com/JayeshVegda/Python-Project/tree/main/4.%20Higher%20and%20Lower) | Higher & Lower game with Movie Editions (got bored, left in middle) | [Jayesh Vegda](https://github.com/JayeshVegda) |
 | 05 | [YT Downloader](https://github.com/JayeshVegda/Python-Project/tree/main/5.%20Yt%20Video%20Downloader) | It can download any video from youtube | [Jayesh Vegda](https://github.com/JayeshVegda) |
+| 06 | [Age Calc](https://github.com/JayeshVegda/Python-Project/tree/main/6.%20Age%20Calculator) | Simple Python Program that show your age | [Jayesh Vegda](https://github.com/JayeshVegda) |
+| 07 | [Read News](https://github.com/JayeshVegda/Python-Project/tree/main/7.%20Read%20News) | Advance New reading with alot features | [Jayesh Vegda](https://github.com/JayeshVegda) |
