@@ -30,7 +30,7 @@ class newpaper:
     
     def settings(self):
         while True:
-            os.system("cls")
+            os.system("cls" if os.name == "nt" else "clear")
             self.logo()
             print("Select any option from below")
             print("1. Change Country")
@@ -60,8 +60,9 @@ class newpaper:
                 print("Invalid Input")
 
        
+
     def select_country(self):
-        os.system('cls')
+        os.system("cls" if os.name == "nt" else "clear")
         self.logo()
         country_codes = {
             'United States': 'us',
@@ -147,7 +148,7 @@ class newpaper:
  
     def select_categories(self):        
         while True:
-            os.system("cls")
+            os.system("cls" if os.name == "nt" else "clear")
             print("Select any option from below")
             print("1. All")
             print("2. Business")
@@ -222,7 +223,7 @@ class newpaper:
         
     def main_menu(self):
         while True:
-            os.system("cls")
+            os.system("cls" if os.name == "nt" else "clear")
             self.logo()
             print("Welcome to the News API")
             print("1. Get News")
@@ -246,19 +247,25 @@ class newpaper:
         res = requests.get(url)
         s = res.text
         found = json.loads(s)
-        os.system("cls")
+        
+        os.system("cls" if os.name == "nt" else "clear")
         self.logo()
-        if not found['articles']:
-            print("\nError Occure \n- Check Your Internet Connection\n - Check Your Api Key ")
+        if found['status'] == 'error':
+             print("\n- Something Went Wrong!")
+             print("-", found['message'])
+             input("\nPress Enter to Return to Main Menu ")
+             self.main_menu()
+        elif found['status'] == 'ok':
+            print("\nWe have Found Total", found['totalResults'], "For You!")
+            time.sleep(2)
         else:
-            print("We have Found Total", found['totalResults'], "For You!")
+            print("\nError Occure")
+            time.sleep(2)
+            self.main_menu()
         time.sleep(3)
         change = True
         while True:
-            os.system("cls")
-            print(url)
-            print(self.base_url)
-            print(self.categories)
+            os.system("cls" if os.name == "nt" else "clear")
             self.logo()
             if not found['articles']:
                 print("No more articles available.")
@@ -288,4 +295,4 @@ class newpaper:
                 
 if __name__ == '__main__':
     n = newpaper()
-    n.main_menu()
+    n.get_news()
