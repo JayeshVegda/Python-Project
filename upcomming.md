@@ -14,5 +14,5 @@
 | 09 | Translater | Mid | Upcoming 🔴 | |
 | 10 | Browser | Hard | Upcoming 🔴 | |
 | 11 | wifi scraper | Mid | Upcoming 🔴 | |
-| 12 | weather and time | Mid | Upcoming 🔴 | |
+| 12 | weather and time | Mid | Upcoming 🔴 | OnWork 🟡 |
 | 13 | Game - Dice Simulation | Mid | Upcoming 🔴 | |
