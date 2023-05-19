@@ -18,3 +18,5 @@
 | 05 | [YT Downloader](https://github.com/JayeshVegda/Python-Project/tree/main/5.%20Yt%20Video%20Downloader) | It can download any video from youtube | [Jayesh Vegda](https://github.com/JayeshVegda) |
 | 06 | [Age Calc](https://github.com/JayeshVegda/Python-Project/tree/main/6.%20Age%20Calculator) | Simple Python Program that show your age | [Jayesh Vegda](https://github.com/JayeshVegda) |
 | 07 | [Read News](https://github.com/JayeshVegda/Python-Project/tree/main/7.%20Read%20News) | Advance New reading with alot features | [Jayesh Vegda](https://github.com/JayeshVegda) |
+| 08 | [Weather Apps](https://github.com/JayeshVegda/Python-Project/tree/main/8.%20Weather%20App) | Weather Apps that show full detailed weather of any place | [Jayesh Vegda](https://github.com/JayeshVegda) |
+
